@@ -1,6 +1,7 @@
 import numpy as np
 from scipy.optimize import curve_fit
 import matplotlib.pyplot as plt
+import scipy
 
 
 def planck(x, a, b, c):
@@ -13,6 +14,10 @@ def linear(x, a, b, c):
 
 def taylor(x, a, b, c):
     return a * x**2 + b * x + c
+
+
+def xsinx(x, a, b, c):
+    return c * (scipy.special.gamma(a * x)) / (np.exp(b * x**2))
 
 
 def fit_stuff(f, cijfers):
@@ -57,6 +62,13 @@ prediction, tentamen_halen, x_continuous, cijfers_continuous = fit_stuff(
 print(prediction, tentamen_halen)
 plt.plot(x_continuous, cijfers_continuous, label="Taylor fit")
 
+prediction, tentamen_halen, x_continuous, cijfers_continuous = fit_stuff(xsinx, cijfers)
+print(prediction, tentamen_halen)
+plt.plot(x_continuous, cijfers_continuous, label="XsinX fit")
+
 
 plt.legend()
+plt.ylim(0, 10)
+plt.xlabel("De hoeveelste pogin het is")
+plt.ylabel("Het cijfer van het tentamen")
 plt.show()
