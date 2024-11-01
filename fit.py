@@ -37,12 +37,12 @@ def fit_stuff(f, cijfers):
     )
 
 
-cijfers = [1.8, 1.4, 3.5, 5.2, 2.5, 2]
+cijfers = [1.8, 1.4, 3.5, 5.2, 2.5, 2, 6.0]
 xs = list(range(1, len(cijfers) + 1))
 
 
 plt.scatter(xs, cijfers, label="Daadwerkelijke cijfers")
-plt.scatter((7), (7.1), label="Adriaan's eigen voorspelling")
+plt.scatter((8), (6.0), label="Adriaan's eigen voorspelling")
 
 prediction, tentamen_halen, x_continuous, cijfers_continuous = fit_stuff(
     planck, cijfers
@@ -62,9 +62,9 @@ prediction, tentamen_halen, x_continuous, cijfers_continuous = fit_stuff(
 print(prediction, tentamen_halen)
 plt.plot(x_continuous, cijfers_continuous, label="Taylor fit")
 
-prediction, tentamen_halen, x_continuous, cijfers_continuous = fit_stuff(xsinx, cijfers)
-print(prediction, tentamen_halen)
-plt.plot(x_continuous, cijfers_continuous, label="XsinX fit")
+# prediction, tentamen_halen, x_continuous, cijfers_continuous = fit_stuff(xsinx, cijfers)
+# print(prediction, tentamen_halen)
+# plt.plot(x_continuous, cijfers_continuous, label="XsinX fit")
 
 
 plt.legend()
