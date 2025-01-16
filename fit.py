@@ -42,7 +42,7 @@ xs = list(range(1, len(cijfers) + 1))
 
 
 plt.scatter(xs, cijfers, label="Daadwerkelijke cijfers")
-plt.scatter((8), (6.0), label="Adriaan's eigen voorspelling")
+plt.scatter((7, 8), (7.1, 6.0), label="Adriaan's eigen voorspelling")
 
 prediction, tentamen_halen, x_continuous, cijfers_continuous = fit_stuff(
     planck, cijfers
@@ -69,6 +69,6 @@ plt.plot(x_continuous, cijfers_continuous, label="Taylor fit")
 
 plt.legend()
 plt.ylim(0, 10)
-plt.xlabel("De hoeveelste pogin het is")
+plt.xlabel("De hoeveelste poging het is")
 plt.ylabel("Het cijfer van het tentamen")
 plt.show()
