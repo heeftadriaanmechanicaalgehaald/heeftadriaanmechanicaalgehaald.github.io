@@ -37,12 +37,13 @@ def fit_stuff(f, cijfers):
     )
 
 
-cijfers = [1.8, 1.4, 3.5, 5.2, 2.5, 2, 6.0]
+cijfers = [1.8, 1.4, 3.5, 5.2, 2.5, 2, 6.0, 5.0]
 xs = list(range(1, len(cijfers) + 1))
 
 
 plt.scatter(xs, cijfers, label="Daadwerkelijke cijfers")
 plt.scatter((7, 8), (7.1, 6.0), label="Adriaan's eigen voorspelling")
+plt.scatter((8), (5.1), label="Onze vorige voorspelling")
 
 prediction, tentamen_halen, x_continuous, cijfers_continuous = fit_stuff(
     planck, cijfers
